@@ -1,0 +1,21 @@
+<h2>My Awesome List</h2>
+<table class="table table-striped col-md-10 offset-md-1">
+  <thead>
+  <tr>
+    <th scope="col">SST</th>
+    <th scope="col">Tag</th>
+    <th scope="col">URL</th>
+    <th scope="col">Descriptions</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let awe of awesomeList ; index as i">
+    <th scope="row">{{i+1}}</th>
+    <td>{{awe.tag}}</td>
+    <td>{{awe.url}}</td>
+    <td>{{awe.descriptions}}</td>
+    <td><a [routerLink]="['/awesome',awe.id,'edit']">Edit</a></td>
+  </tr>
+  </tbody>
+</table>
