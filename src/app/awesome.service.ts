@@ -18,4 +18,7 @@ export class AwesomeService {
   update(awe: Awesome): Observable<Awesome> {
     return this.http.put<Awesome>(`${this.API_URL}/${awe.id}`, awe);
   }
+  delete(id: number): Observable<Awesome> {
+    return this.http.delete<Awesome>(`${this.API_URL}/${id}`);
+  }
 }

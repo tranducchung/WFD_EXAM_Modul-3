@@ -46,4 +46,10 @@ export class AwesomeEditComponent implements OnInit {
       }, error => console.log(error));
     }
   }
+  delete() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.awesomeService.delete(id).subscribe( next => {
+      this.router.navigate(['/awesome']);
+    }, error => console.log(error) );
+  }
 }
